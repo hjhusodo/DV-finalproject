@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Institutions</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <style>
+
+    body {
+        background-color: rgb(245, 244, 241);
+        width: 121rem;
+    }
+    .filler {
+        /* height: 16.5rem; */
+        height: 48rem;
+        text-align: left;
+        max-width: 150rem;
+        /* background-color:grey; */
+        background-color: rgb(245, 244, 241);
+        font-size: 10px;
+    }
+    #scrolly-side .scrolly {
+        display: flex;
+        max-width: 150rem;
+        margin: auto;
+        margin-top: 55px;
+        /* background-color: blue; */
+        background-color: rgb(245, 244, 241);
+    }
+    #scrolly-side .scrolly > {
+        flex: 1;
+    }
+    #scrolly-side .scrolly article {
+        padding-right: 10rem;
+        padding-left: 10rem;
+        max-width: 80rem;
+    }
+    #scrolly-side .scrolly article .step {
+        min-height: 600px;
+        width: 750px;
+        margin-bottom: 1rem;
+        margin-left: -5rem;
+        background-color: rgb(245, 244, 241);
+        transition: background-color 250ms ease-in-out;
+    }
+    #scrolly-side .scrolly article .step p {
+        margin: 0;
+        padding: 0.5rem;
+        text-align: center;
+        font-weight: 400;
+    }
+    #scrolly-side .scrolly figure.sticky {
+        position: sticky;
+        width: 90%;
+        height: 60vh;
+        background: transparent;
+        margin-right: 95rem;
+        margin-top: -.3rem;
+        top: 0;
+        left: 0;
+    }
+    .chart-container {
+        max-width: 1050px;
+        margin: 0 auto;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', 'Arial', 'sans-serif';
+    }
+    svg {
+        overflow: visible;
+        margin: 30px;
+    }
+    h1 {
+        font-size: 50px;
+        font-style: normal;
+        font-weight: lighter;
+        text-align: center;
+    }
+    .points {
+        stroke-width: 1.2px;
+    }
+    .x.axis .tick line {
+        stroke: black;
+        stroke-opacity: 0.5;
+    }
+    .y.axis .tick line {
+        stroke: black;
+        stroke-opacity: 0.5;
+    }
+    .y.axis .domain {
+        display: none;
+    }        
+    .x.axis .domain {
+        display: none;
+    }
+    .x .tick text {
+        font-size: 15px;
+        fill: #333;
+    }
+    .y .tick text {
+        font-size: 14px;
+        fill: #333;
+    }
+    .label {
+        font-size: 16px;
+        font-weight: lighter;
+    }
+    .axis-label {
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+    .pop-up {
+        position: fixed;
+        border: 1px solid black;
+        font-size: 10px;
+        border-radius: 1px;
+        line-height: 1.2;
+        width: auto;
+        pointer-events: none;
+        background: rgba(0, 0, 0, .6);
+        color: whitesmoke;
+        padding: 4px;
+        font-size: 1em;
+    }
+    .source {
+        max-width: 1000px;
+        font-size: 14px;
+        text-anchor: left;
+        margin-left: 1560px;
+        margin-top: -20px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<section class='filler'>
+  <h1>Institution and Economic Performance in European Ex-colonies:<br>
+        How Mortality Rate Works as Instrumental Variable</h1>
+  <h2 style="font-style: normal; margin-top: -20px; font-size: 28px; text-align: center">
+    <a  href="https://pages.nyu.edu/debraj/Courses/Readings/AcemogluJohnsonRobinsonAER.pdf" 
+        target="_blank">a brief summary of study by Daron Acemoglu, Simon Johnson, and James Robinson</a></h2>
+    <p style="text-indent: 60px; line-height: 1.8; font-style: normal; font-size: 22px; text-align: justify; 
+    margin-top: 60px; margin-right: 155px; margin-left: 80px;">
+        Why do some countries have high income while others don’t? One might argue that "institution" plays important role in determining welfare. 
+        Good institution, indicated by more secure property rights and less distortionary policies, 
+        allows people to invest more in physical and human capital and utilize them in the best way to generate even higher income in the future. 
+        Korean Peninsula is a good example of how different institution might lead to different economic performance. 
+        In the north, we see stagnated economy under central planning and collective ownership, 
+        while in the south we see wealthier people with property right and market economy. <br>
+    <p style="text-indent: 60px; line-height: 1.8; font-style: normal; font-size: 22px; text-align: justify; 
+    margin-right: 155px; margin-left: 80px;">
+        In their study, Acemoglu, Johnson, and Robinson estimated the effect of institution on economic performance using 
+        earlier European settlers mortality rate as instrumental variable. 
+        In addition, they propose three premises: (1) there were different types of European colonization strategy, extractive and inclusive, 
+        (2) colonization strategy was determined by the feasibility of European settlements, which was indicated by mortality rate, and 
+        (3) the colonial system persisted even after the colonies declared independence. <br>
+    <p style="text-indent: 60px; line-height: 1.8; font-style: normal; font-size: 22px; text-align: justify; 
+    margin-right: 155px; margin-left: 80px;">
+        I divide this brief summary into three sections. 
+        First, I would show the relationship between institution and economic performance in 1995, and 
+        mention why we need mortality rate as an instrumental variable. 
+        Second, I would depict the relationship between our instrumental variable and our predictor variable which is institution. 
+        Lastly, I would exhibit the relationship between our instrumental variable and economic performance in 1995. 
+        After seeing those three relationships, I hope that you will get better understanding of how institution 
+        determines economic performance in European ex-colonies and why mortality rate was an plausible instrument.</p>
+</section>
+ 
+<section id='scrolly-side'>
+  
+  <div class='scrolly'>
+    
+ 	  <article>
+      <div class='step' data-index='0' id="this_data_1">
+        <h2 style="text-align: left; font-size: 22px; margin-top: 30px;">Institution and income: why we need an instrument</h2>
+            <p style="font-size: 21px; text-indent: 60px; line-height: 1.8; text-align: justify; margin-right: -50px;" id="p_this_data_1">
+                To see the effect of institution to economic performance, 
+                firstly the authors run a regression of log 1995 GDP/Capita on average index of protection against "expropriation risk" 
+                from 1985 to 1995, collected from Political Risk Services. 
+                Result showed that institution was significant in explaining more than half variation in economic performance of 
+                64 sample countries. Figure on your right showed the direction of relationship between those variables. 
+                However, one should be careful in interpreting this relationship as causal, authors argued. 
+                There could be reverse causality whether institution affects economic performance or 
+                rich countries have more resources to establish good institution. 
+                Moreover, there might be natural bias capturing better institution in richer economies 
+                since the proxy of institution was measured ex-post. To solve this problem, it might need
+                an instrumental variable that could explain variation in institution but no direct effect to economic performance.
+            </p>
+      </div>
+      <div class='step' data-index='1' id="this_data_2">
+        <h2 style="text-align: left; font-size: 22px">Settlement feasibility and colonization strategy</h2>
+        <p style="font-size: 21px; text-indent: 60px; line-height: 1.8; text-align: justify; margin-right: -50px" id="p_this_data_2">
+            Based on the authors’ premises, it was interesting to see the relationship between institution and 
+            the proposed instrumental variable which was settlers’ mortality rate. 
+            Data on the instrumental variable gathered from historian Philip D. Curtin’s work which 
+            recorded the mortality rates of soldiers, bishops, and sailors stayed in the colonies between 17th and 19th centuries. 
+            From the chart, we see that that ex-colonies in which Europeans’ mortality rates were higher, had dramatically worse institutions in 1995. 
+            Going back to authors’ premise number 1 and 2, and after controlling various variables, 
+            it was plausibly believed that institution in 1995 was shaped by settlement feasibility that was determined by earlier mortality rates. 
+            Once Europeans think it was feasible to settle in the colony, they would replicate their home institution promoting protection 
+            for private property and checks and balances against government expropriation, otherwise extractive institution would be established.
+        </p>
+       </div>
+       <div class='step' data-index='2' id="this_data_3">
+        <h2 style="text-align: left; font-size: 22px; margin-top: 30px;">European did not immune, but indigenous should</h2>
+        <p style="font-size: 21px; text-indent: 60px; line-height: 1.8; text-align: justify; margin-right: -50px" id="p_this_data_3">
+            Lastly, we draw the relationship between economic performance in 1995 and earlier European settlers’ mortality rates. 
+            Looking at the chart on your right, we can see negative correlation between them. 
+            In other words, colonies in which Europeans faced higher mortality rates hundred years ago were essentially poorer in 1995 than 
+            colonies that were “safer” for Europeans to settle. Malaria and yellow fever were the cause of the deaths of 
+            earlier European settlers who had no immunities against them. However, authors argued that for local people there should be limited effect 
+            of those diseases since they should had developed various types of immunities by living for longer periods in the country. 
+            Hence, the diseases were unlikely to be the reason why many countries in Africa and Asia were very poor in 1995. 
+            Based on that argument, authors believe that the picture on the right supports their theory that earlier settlers’ mortality rate 
+            was exogenous and could be a robust instrument to estimate the effect of institutions brought by Europeans 
+            to ex-colonies' economic performance in 1995.
+        </p>
+      </div>
+	  </article>
+    
+	  <figure class='sticky'>
+		<svg width="820px" height="500px" style="margin-top: 50px;"></svg>
+        <div class="pop-up">
+        </div>
+  	</figure>
+    
+  </div>
+  
+</section>
+
+<section class='filler'>
+    <p class="source" style="margin-top: 10px;">Source: Acemoglu et al. (2001)</p>
+    <p style="margin-top: 930px; text-align: center; font-size: 38px;">END</p>
+</section>
+  
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <script src='https://unpkg.com/enter-view@1.0.0/enter-view.min.js'></script>
+  <script src='https://unpkg.com/stickyfilljs@2.0.5/dist/stickyfill.js'></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <script>
+    let width = 600;
+    let height = 400;
+    let svg = d3.select("body").select("svg");
+
+    d3.csv("institutions.csv").then(function (data) {
+        data.forEach(function(row) {
+            row.log_gdp_cap = +row.log_gdp_cap
+            row.exp_risk = +row.exp_risk
+            row.ln_mortality = +row.ln_mortality    
+        })
+
+        data_axis_x = 'exp_risk'
+        data_axis_y = 'log_gdp_cap'
+        domain_x = [3.2, 10.3]
+        domain_x_value = [4, 6, 8, 10]
+        domain_y = [4.8, 11.5]
+        domain_y_value = [4, 6, 8, 10]
+        x_text = "AVG. PROTECTION AGAINST EXPROPRIATION 1985-95"
+        y_text = "1995 LOG GDP/CAPITA"
+
+        let margin = {top: 50, right: 0, bottom: 0, left: 50};
+                                        
+        let x = d3.scaleLinear()
+            .domain(domain_x)
+            .range([margin.left, width - margin.right])
+
+        let y = d3.scaleLinear()
+            .domain(domain_y)
+            .range([height - margin.bottom, margin.top])
+
+        let yAxisSettings = d3.axisLeft(y)
+            .ticks(4)
+            .tickSize(10)
+            .tickValues(domain_y_value)
+            .tickPadding(5)
+            .tickFormat(d3.format(""))
+
+        let xAxisSettings = d3.axisBottom(x)
+            .ticks(4)
+            .tickSize(10)
+            .tickValues(domain_x_value)
+            .tickPadding(3)
+            .tickFormat(d3.format(""))
+
+        let xAxisTicks = svg.append("g")
+            .attr("class", "x axis")
+            .call(xAxisSettings)
+            .attr("transform", `translate(0, ${height - margin.bottom})`)
+
+        let yAxisTicks = svg.append("g")
+            .attr("class", "y axis")
+            .call(yAxisSettings)
+            .attr("transform", `translate(${margin.left},0)`)
+
+        let zeroline_x =  svg.append("line")
+            .attr("x1", margin.left)
+            .attr("x2", width)
+            .attr("y1", y(domain_y[0]))
+            .attr("y2", y(domain_y[0]))
+            .style("stroke", "#333")
+            .style("stroke-width", "2.5")
+            .style("opacity", .5)
+
+        let zeroline_y =  svg.append("line")
+            .attr("x1", x(domain_x[0]))
+            .attr("x2", x(domain_x[0]))
+            .attr("y1", margin.bottom)
+            .attr("y2", height)
+            .style("stroke", "#333")
+            .style("stroke-width", "2.5")
+            .style("opacity", .5)
+
+        let continent_name = ["Africa", "America", "Asia", "Europe", "Oceania",]
+        
+        let color = d3.scaleOrdinal()
+            .domain(continent_name)
+            .range([ "#FA3488", "#54B6FA", "#5AFA61", "#FAAF00", "#FAF14D"])
+
+        this_is_y_label = svg.append("text")
+            .attr("class", "y-axis-label")
+            .attr("x", 60)
+            .attr("y", 10)
+            .text(y_text)
+            .attr("text-anchor", "start")
+            .attr("style","font-size:13px")
+                        
+        this_is_x_label = svg.append("text")
+            .attr("class", "x-axis-label")
+            .attr("x", width - 50)
+            .attr("y", height + 50)
+            .text(x_text)
+            .attr("style","font-size:13px")
+            .attr("text-anchor", "middle")
+
+        let points = svg.append("g")
+            .attr("id", "dots")
+            .selectAll("dots")
+            .data(data)
+            .enter()
+            .append("circle")
+            .attr("class", function(d) {return "points p-" + d.abbrev})
+            .attr("cx", function(d) {
+                return x(d[data_axis_x]);
+            })
+            .attr("cy", function(d) {
+                return y(d[data_axis_y]);
+            })
+            .attr("r", 11)
+            .style("stroke", "#333333")
+            .style("stroke-width", 1)
+            .style("fill", function (d) { return color(d.continent) } )
+            .style("fill-opacity", 0.5)
+            
+        svg.selectAll("mylegends")
+            .data(continent_name)
+            .enter()
+            .append("text")
+            .attr("x", 670)
+            .attr("y", function(d,i){ return 17 + i*25})
+            .style("fill", "black")
+            .text(function(d){ return d})
+            .attr("text-anchor", "left")
+            .style("alignment-baseline", "middle")
+            .style("fill-opacity", 1)
+            .style("font-size", "10px")
+            .style("font-weight", "bold")
+
+        function displayUpdate(data_index){
+            if(data_index == '0'){
+                data_axis_x = 'exp_risk'
+                data_axis_y = 'log_gdp_cap'
+                domain_x = [3.2, 10.3]
+                domain_x_value = [4, 6, 8, 10]
+                domain_y = [3.8, 10.5]
+                domain_y_value = [4, 6, 8, 10]
+                x_text = "AVG. PROTECTION AGAINST EXPROPRIATION 1985-95"
+                y_text = "1995 LOG GDP/CAPITA"
+            }
+            else if(data_index == '1'){
+                data_axis_x = 'ln_mortality'
+                data_axis_y = 'exp_risk'
+                domain_x = [1, 9]
+                domain_x_value = [2, 4, 6, 8]
+                domain_y = [2.8, 10.3]
+                domain_y_value = [4, 6, 8, 10]
+                x_text = "LOG SETTLER MORTALITY"
+                y_text = "AVG. PROTECTION AGAINST EXPROPRIATION 1985-95"
+            }
+            else{
+                data_axis_x = 'ln_mortality'
+                data_axis_y = 'log_gdp_cap'
+                domain_x = [1, 9]
+                domain_x_value = [2, 4, 6, 8]
+                domain_y = [3.8, 10.5]
+                domain_y_value = [4, 6, 8, 10]
+                x_text = "LOG SETTLER MORTALITY"
+                y_text = "1995 LOG GDP/CAPITA"
+            }
+                        
+            x.domain(domain_x)
+            xAxisSettings.tickValues(domain_x_value)
+            xAxisTicks.transition().duration(2000).call(xAxisSettings)       
+                       
+            y.domain(domain_y)
+            yAxisSettings.tickValues(domain_y_value)
+            yAxisTicks.transition().duration(2000).call(yAxisSettings)
+
+
+            this_is_x_label.text(x_text)
+            this_is_x_label.transition().duration(2000)
+ 
+            this_is_y_label.text(y_text)
+            this_is_y_label.transition().duration(2000)
+            
+
+            svg.select("#dots")
+                .selectAll("circle")
+                .transition()
+                .delay(function(d,i){return(i*3)})
+                .duration(2000)
+                .attr("cx", function(d) {
+                    return x(d[data_axis_x]);
+                })
+                .attr("cy", function(d) {
+                    return y(d[data_axis_y]);
+                })
+                
+            svg.selectAll("dot")
+                .data(continent_name)
+                .enter()
+                .append("circle")
+                .attr("cx", 650)
+                .attr("cy", function(d,i){ return 17 + i*25})
+                .attr("r", 8)
+                .style("fill", function(d){ return color(d)})
+                .style("fill-opacity", .3)
+                .style("stroke", "#333333")
+                .style("stroke-opacity", 1)
+
+                let popup = d3.select(".pop-up");
+                points.on("mouseover", (event, d) => {
+                    points
+                        .style("stroke", "#333333")
+                        .style("stroke-width", 1)
+                        .style("fill", function (d) { return color(d.continent) } )
+                        .style("fill-opacity", .5)
+                    
+                    svg.select(".p-" + d.abbrev)
+                        .style("stroke", "black")
+                        .style("stroke-width", 4)
+                        .style("fill", "black")
+                        .style("fill-opacity", 0.3)
+                        .raise()   
+
+                    let lang = d.colonies
+                   
+                    popup
+                        .style("opacity", 1)
+                        .style("left", (event.x + 10) + "px")
+                        .style("top", (event.y - 40) + "px")
+                        .html(lang)                       
+                })
+
+                points.on("mouseout", (event, d) => {
+                    points
+                        .style("stroke", "#333333")
+                        .style("stroke-width", 1)
+                        .style("fill", function (d) { return color(d.continent) } )
+                        .style("fill-opacity", .5)
+
+                    popup
+                        .style("opacity", 0)
+                })
+            
+        }
+            
+        const container = d3.select('#scrolly-side');
+        const stepSel = container.selectAll('.step');
+
+        function updateChart(index) {
+            const sel = container.select(`[data-index='${index}']`);
+
+            const this_id = sel.attr('id');
+
+            $("#this_data_1").css("color","#dfdfdf");
+            $("#this_data_2").css("color","#dfdfdf");
+            $("#this_data_3").css("color","#dfdfdf");
+            $("#"+this_id).css("color","black");
+
+            $("#p_this_data_1").css("color","#dfdfdf");
+            $("#p_this_data_2").css("color","#dfdfdf");
+            $("#p_this_data_3").css("color","#dfdfdf");
+            $("#p_"+this_id).css("color","black");
+            
+            displayUpdate(index)
+
+        }
+
+        function init() {
+
+            Stickyfill.add(d3.select('.sticky').node());
+            enterView({
+                selector: stepSel.nodes(),
+                offset: 0.5,
+                
+                enter: el => {
+                const index = +d3.select(el).attr('data-index');
+                updateChart(index);
+                },
+                
+                exit: el => {
+                let index = +d3.select(el).attr('data-index');
+                index = Math.max(0, index - 1);
+                updateChart(index);
+            } });
+
+        }
+        init();
+
+    })
+
+  </script>
+</body>
+</html>

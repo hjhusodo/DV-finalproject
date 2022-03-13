@@ -1,0 +1,65 @@
+﻿colonies,abbrev,log_gdp_cap,exp_risk,mortality_est,ln_mortality,continent
+Algeria,DZA,8.39,6.5,78.2,4.36,Africa
+Angola,AGO,7.77,5.36,280,5.63,Africa
+Argentina,ARG,9.13,6.39,68.9,4.23,America
+Australia,AUS,9.9,9.32,8.55,2.15,Oceania
+Bahamas,BHS,9.29,7.5,85,4.44,America
+Bangladesh,BGD,6.88,5.14,71.41,4.27,Asia
+Bolivia,BOL,7.93,5.64,71,4.26,America
+Brazil,BRA,8.73,7.91,71,4.26,America
+Burkina Faso,BFA,6.85,4.45,280,5.63,Africa
+Cameroon,CMR,7.5,6.45,280,5.63,Africa
+Canada,CAN,9.99,9.73,16.1,2.78,America
+Chile,CHL,9.34,7.82,68.9,4.23,America
+Colombia,COL,8.81,7.32,71,4.26,America
+Congo,COG,7.42,4.68,240,5.48,Africa
+Costa Rica,CRI,8.79,7.05,78.1,4.36,America
+Cote d'Ivoire,CIV,7.44,7,668,6.5,Africa
+Dominican Republic,DOM,8.36,6.18,130,4.87,America
+Ecuador,ECU,8.47,6.55,71,4.26,America
+Egypt,EGY,7.95,6.77,67.8,4.22,Africa
+El Salvador,SLV,7.95,5,78.1,4.36,America
+Ethiopia,ETH,6.11,5.73,26,3.26,Africa
+Gabon,GAB,8.9,7.82,280,5.63,Africa
+Gambia,GMB,7.27,8.27,1470,7.29,Africa
+Ghana,GHA,7.37,6.27,668,6.5,Africa
+Guatemala,GTM,8.29,5.14,71,4.26,America
+Guinea,GIN,7.49,6.55,483,6.18,Africa
+Guyana,GUY,7.9,5.89,32.18,3.47,Africa
+Haiti,HTI,7.15,3.73,130,4.87,America
+Honduras,HND,7.69,5.32,78.1,4.36,America
+Hong Kong,HKG,10.05,8.14,14.9,2.7,Asia
+India,IND,7.33,8.27,48.63,3.88,Asia
+Indonesia,IDN,8.07,7.59,170,5.14,Asia
+Jamaica,JAM,8.19,7.09,130,4.87,America
+Kenya,KEN,7.06,6.05,145,4.98,Africa
+Madagascar,MDG,6.84,4.45,536.04,6.28,Africa
+Malaysia,MYS,8.89,7.95,17.7,2.87,Asia
+Mali,MLI,6.57,4,2940,7.99,Africa
+Malta,MLT,9.43,7.23,16.3,2.79,Europe
+Mexico,MEX,8.94,7.5,71,4.26,America
+Morocco,MAR,8.04,7.09,78.2,4.36,Africa
+New Zealand,NZL,9.76,9.73,8.55,2.15,Oceania
+Nicaragua,NIC,7.54,5.23,163.3,5.1,America
+Niger,NER,6.73,5,400,5.99,Africa
+Nigeria,NGA,6.81,5.55,2004,7.6,Africa
+Pakistan,PAK,7.35,6.05,36.99,3.61,Asia
+Panama,PAN,8.84,5.91,163.3,5.1,America
+Paraguay,PRY,8.21,6.95,78.1,4.36,America
+Peru,PER,8.4,5.77,71,4.26,America
+Senegal,SEN,7.4,6,164.66,5.1,Africa
+Sierra Leone,SLE,6.25,5.82,483,6.18,Africa
+Singapore,SGP,10.15,9.32,17.7,2.87,Asia
+South Africa,ZAF,8.89,6.86,15.5,2.74,Africa
+Sri Lanka,LKA,7.73,6.05,69.8,4.25,Asia
+Sudan,SDN,7.31,4,88.2,4.48,Africa
+Tanzania,TZA,6.25,6.64,145,4.98,Africa
+Togo,TGO,7.22,6.91,668,6.5,Africa
+Trinidad and Tobago,TTO,8.77,7.45,85,4.44,America
+Tunisia,TUN,8.48,6.45,63,4.14,Africa
+Uganda,UGA,6.97,4.45,280,5.63,Africa
+Uruguay,URY,9.03,7,71,4.26,America
+USA,USA,10.22,10,15,2.71,America
+Venezuela,VEN,9.07,7.14,78.1,4.36,America
+Vietnam,VNM,7.28,6.41,140,4.94,Asia
+Zaire,ZAR,6.87,3.5,240,5.48,Africa
